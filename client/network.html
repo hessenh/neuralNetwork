@@ -1,0 +1,108 @@
+<template name = "network" >
+    <div class="row">
+          <div class="span2">
+                {{>inputFields}}
+                {{>next}}
+          </div>
+          <div class="span2">
+              <h1>Input</h1>
+               {{>inputNode}}
+          </div>
+          <div class="span2">
+            <h1>Weight</h1>
+            {{>inputWeight}}
+          </div>
+          <div class="span2">
+              <h1>Hidden</h1>
+              {{>hiddenNode}}
+          </div>
+          <div class="span2">
+            <h1>Weight</h1>
+            {{>outputWeight}}
+          </div>
+          <div class="span2">
+              <h1>Output</h1>
+              {{>outputNode}}
+          </div>
+    </div>
+   
+</template>
+
+<template name = "next">
+  <button type="button" class="btn btn-default" id = "iterate">Train</button>
+  <button type="button" class="btn btn-default" id = "test">Test</button>
+  <button type="button" class="btn btn-default" id = "A">A</button>
+  <button type="button" class="btn btn-default" id = "B">B</button>
+  <button type="button" class="btn btn-default" id = "C">C</button>
+  <button type="button" class="btn btn-default" id = "D">D</button>
+</template>
+
+
+<template name ="inputFields">
+  <input type="text" class="form-control" id="input" placeholder="">
+  <input type="text" class="form-control" id="inputOne" placeholder="">
+  <input type="text" class="form-control" id="inputTwo" placeholder="">
+  <input type="text" class="form-control" id="inputThree" placeholder="">
+  <input type="text" class="form-control" id="inputFour" placeholder="">
+</template>
+
+<template name = "inputWeight">
+  <ul id="inputWeight" class="unstyled">
+    {{#each weightsInputNodesList}}
+      {{>weight}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name = "outputWeight">
+  <ul id="outputWeight" class="unstyled">
+    {{#each weightsOutputNodesList}}
+      {{>weight}}
+    {{/each}}
+  </ul>
+</template>
+
+
+<template name= "inputNode">
+  <ul id="inputNode" class="unstyled">
+    {{#each inputActivationNodesList}}
+      {{>nodeValue}}
+    {{/each}}
+
+  </ul>
+</template>
+
+<template name= "hiddenNode">
+  <ul id="hiddenNode" class="unstyled">
+    {{#each hiddenActivationNodesList}}
+      {{>nodeValue}}
+    {{/each}}
+
+  </ul>
+</template>
+
+<template name= "outputNode">
+  <ul id="outputNode" class="unstyled">
+    {{#each outputActivationNodesList}}
+      {{>nodeValue}}
+    {{/each}}
+
+  </ul>
+</template>
+
+
+<template name= "nodeValue">
+  <div class="node {{selected}}">
+    <div class="panel-body">
+            <td class="text">{{value}}  </td>
+    </div>
+  </div>
+</template>
+
+<template name= "weight">
+  <div class="weight {{selected}}">
+    <div class="panel-body">
+            <td class="text">{{weight}}  </td>
+    </div>
+  </div>
+</template>

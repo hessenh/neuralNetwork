@@ -1,0 +1,18 @@
+<template name= "inputNodes">
+  <ul id="inputNodes" class="unstyled">
+    {{#each inputNodesList}}
+      {{>node}}
+    {{/each}}
+
+  </ul>
+</template>
+
+
+<!-- Display the node -->
+<template name= "node">
+  <div class="node {{selected}}">
+    <div class="panel-body">
+            <td class="title">{{title}}</td>
+    </div>
+  </div>
+</template>
